@@ -1,0 +1,15 @@
+fake_device:
+  build: ../fake-device/
+  container_name: fake_device
+
+iot_metrics:
+  build: ../iot-metrics/
+  container_name: iot_metrics
+
+iot_broker:
+  build: ../iot-broker/
+  container_name: iot_broker
+
+vidi_web:
+  build: ../node_modules/vidi-dashboard/
+  container_name: vidi_web

@@ -23,7 +23,7 @@ seneca.act({
   nick: 'fakedevice',
   email: 'matteo.collina@nearform.com',
   password: 'fakepassword',
-  publishPatterns: ['fake/lux/0']
+  publishPatterns: ['sensor/lux/0']
 }, (err) => {
   if (err) {
     throw err
@@ -45,4 +45,19 @@ seneca.act({
 })
 
 server.on('published', function (packet) {
+  var name = packet.topic.replace(/\//g, '.')
+
+  var metric = {
+    name: name,
+    time: Date.now(),
+    values: {
+      value: packet.payload.toString(),
+    },
+    tags: {
+      msg_id: packet.messageId,
+      topic: packet.topic
+    }
+  }
+
+  console.log(metric)
 })

@@ -7,5 +7,5 @@ const mqtt = Mqtt.connect('mqtt://localhost', {
 })
 
 setInterval(() => {
-  mqtt.publish('fake/lux/0', (Math.floor(Math.random() * 5000 * 100) / 100) + '')
+  mqtt.publish('sensor/lux/0', (Math.floor(Math.random() * 5000 * 100) / 100) + '')
 }, 1000)
