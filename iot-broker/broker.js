@@ -45,19 +45,37 @@ seneca.act({
 })
 
 server.on('published', function (packet) {
-  var name = packet.topic.replace(/\//g, '.')
+
+  if(!packet.topic.includes('sensor/lux'))
+    return
+
+  var topic = packet.topic.split('/')
+  var sensor_id = topic[2]
 
   var metric = {
-    name: name,
-    time: Date.now(),
-    values: {
-      value: packet.payload.toString(),
-    },
-    tags: {
-      msg_id: packet.messageId,
-      topic: packet.topic
+    source: 'mqtt',
+    payload: {
+      name: 'sensor.lux',
+      time: Date.now(),
+      values: {
+        value: packet.payload.toString(),
+      },
+      tags: {
+        data_type: 'timeseries',
+        uom: 'lux',
+        sensor_type: 'light',
+        sensor_id: sensor_id,
+        broker_id: server.id,
+        topic: `sensor/lux`
+      }
     }
   }
 
-  console.log(metric)
+  var socket = dgram.createSocket('udp4')
+  var payload = new Buffer(JSON.stringify(metric))
+  var size = payload.length
+
+  socket.send(payload, 0, size, '5001', 'localhost', (err) => {
+    if (err) console.log(err)
+  })
 })

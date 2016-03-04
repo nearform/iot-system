@@ -18,7 +18,7 @@ var opts = {
     // opts here
   },
   influx: {
-    influx: {host: '192.168.99.100'}
+    // opts here
   }
 }
 
