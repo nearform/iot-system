@@ -1,0 +1,17 @@
+{
+  "name": "iot-system",
+  "version": "0.1.0",
+  "description": "An iot based system",
+  "main": "index.js",
+  "private": "true",
+  "license": "MIT",
+  "author": "Dean McDonnell (http://mcdonnelldean.me)",
+  "scripts": {
+    "start": "node srv/demo.js"
+  },
+  "dependencies": {
+    "lodash": "4.6.0",
+    "seneca": "1.3.0",
+    "vidi-dashboard": "vidi-insights/vidi-dashboard"
+  }
+}
