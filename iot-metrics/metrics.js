@@ -2,7 +2,7 @@
 
 var Influx = require('vidi-influx-sink')
 var Metrics = require('vidi-metrics')
-var Mqtt = require('./vidi-mqtt-metrics')
+var Mqtt = require('../vidi-mqtt-metrics')
 var Toolbag = require('vidi-toolbag-metrics')
 
 var opts = {
