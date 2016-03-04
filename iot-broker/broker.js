@@ -4,6 +4,7 @@ const Seneca = require('seneca')
 const Mosca = require('mosca')
 const MoscaAuth = require('seneca-mosca-auth')
 const dgram = require('dgram')
+const socket = dgram.createSocket('udp4')
 
 const seneca = Seneca()
 
@@ -71,7 +72,6 @@ server.on('published', function (packet) {
     }
   }
 
-  var socket = dgram.createSocket('udp4')
   var payload = new Buffer(JSON.stringify(metric))
   var size = payload.length
 
