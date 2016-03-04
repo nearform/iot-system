@@ -9,6 +9,9 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "lodash": "^4.6.1",
+    "toolbag": "^1.0.0",
+    "toolbag-plugins": "^0.2.0",
     "vidi-influx-sink": "^0.2.1",
     "vidi-metrics": "^0.1.0",
     "vidi-toolbag-metrics": "^0.2.0"
