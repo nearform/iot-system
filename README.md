@@ -1,6 +1,6 @@
 # iot-system
 
-- __Lead:__ [Dean McDonnell][Lead]
+- __Lead:__ [Matteo Collina][Lead]
 - __Sponsor:__ [nearForm][Sponsor]
 
 This repo contains all the required config to spin up an [IoT][] system with [Vidi][] and
@@ -89,18 +89,16 @@ If you feel you can help in any way, be it with documentation, examples, extra t
 features please get in touch.
 
 ## License
-Copyright (c) 2016, Dean McDonnell and other contributors.
+Copyright (c) 2016, Matteo Collina and other contributors.
 Licensed under [MIT][Lic].
 
-
-[Logo]: https://raw.githubusercontent.com/nodezoo/nodezoo-org/master/assets/logo-nodezoo.png
-[Lead]: https://github.com/mcdonnelldean
+[Mosca]: https://github.com/mcollina/mosca
+[Lead]: https://github.com/mcollina
 [Sponsor]: http://www.nearform.com/
-[CoC]: https://github.com/nodezoo/nodezoo-org/blob/master/CoC.md
+[CoC]: https://github.com/nearform/iot-system/blob/master/CoC.md
 [Lic]: ./LICENSE
 
 [IoT]: https://github.com/nearForm/iot-system
 [Vidi]: https://github.com/vidi-insights/vidi-dashboard
-
 
 [docker]: ./
