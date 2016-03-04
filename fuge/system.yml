@@ -8,6 +8,9 @@ influx:
     - 8086:8086
     - 8083:8083
 
+fake_device:
+  build: ../fake-device/
+  container_name: fake_device
 
 iot_metrics:
   build: ../iot-metrics/

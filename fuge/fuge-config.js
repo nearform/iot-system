@@ -18,6 +18,10 @@ module.exports = {
   ],
 
   overrides: {
+    fake_device: {
+      run: 'node device.js'
+    },
+
     iot_metrics: {
       run: 'node metrics.js --seneca.options.debug.short_logs=true --seneca.log=type:act'
     },

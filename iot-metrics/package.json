@@ -1,0 +1,16 @@
+{
+  "name": "iot-metrics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "metrics.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "vidi-influx-sink": "^0.2.1",
+    "vidi-metrics": "^0.1.0",
+    "vidi-toolbag-metrics": "^0.2.0"
+  }
+}

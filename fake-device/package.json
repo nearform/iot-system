@@ -1,0 +1,15 @@
+{
+  "name": "fake-device",
+  "version": "1.0.0",
+  "description": "",
+  "main": "device.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "mqtt": "^1.7.3",
+    "toolbag": "^1.0.0"
+  }
+}
