@@ -2,11 +2,16 @@
 
 const Seneca = require('seneca')
 const Mosca = require('mosca')
+const Mesh = require('seneca-mesh')
 const MoscaAuth = require('seneca-mosca-auth')
 const dgram = require('dgram')
 const socket = dgram.createSocket('udp4')
 
 const seneca = Seneca()
+  .use(Mesh, {
+    auto: true,
+    bases: ['127.0.0.1:7799']
+  })
 
 const server = new Mosca.Server({
   logger: {
@@ -14,36 +19,10 @@ const server = new Mosca.Server({
   }
 })
 
+
+
 // set up seneca-mosca-auth
-seneca.use(MoscaAuth)
 MoscaAuth.setup(seneca, server)
-
-seneca.act({
-  role: 'mosca-auth',
-  cmd: 'register',
-  nick: 'fakedevice',
-  email: 'matteo.collina@nearform.com',
-  password: 'fakepassword',
-  publishPatterns: ['sensor/lux/0']
-}, (err) => {
-  if (err) {
-    throw err
-  }
-})
-
-seneca.act({
-  role: 'mosca-auth',
-  cmd: 'register',
-  nick: 'admin',
-  email: 'matteo.collina@nearform.com',
-  password: 'admin',
-  publishPatterns: ['#'],
-  subscribePatterns: ['#']
-}, (err) => {
-  if (err) {
-    throw err
-  }
-})
 
 server.on('published', function (packet) {
 

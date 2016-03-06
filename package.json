@@ -10,6 +10,7 @@
     "start": "node srv/demo.js"
   },
   "dependencies": {
+    "baseswim": "^0.1.2",
     "lodash": "4.6.0",
     "mosca": "^1.1.2",
     "mqtt": "^1.7.3",
