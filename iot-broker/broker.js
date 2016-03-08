@@ -56,15 +56,14 @@ server.on('published', function (packet) {
   var metric = {
     source: 'mqtt',
     payload: {
-      name: 'sensor.lux',
+      name: 'sensor.read',
       time: Date.now(),
       values: {
         value: packet.payload.toString(),
       },
       tags: {
-        data_type: 'timeseries',
         uom: 'lux',
-        sensor_type: 'light',
+        sensor_type: 'Light',
         sensor_id: sensor_id,
         broker_id: server.id,
         topic: `sensor/lux`

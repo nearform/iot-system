@@ -19,15 +19,18 @@ module.exports = {
 
   overrides: {
     fake_device: {
-      run: 'node -r toolbag device.js'
+      run: 'node -r toolbag device.js',
+      build: 'npm install'
     },
 
     iot_metrics: {
-      run: 'node -r toolbag metrics.js --seneca.options.debug.short_logs=true --seneca.log=type:act'
+      run: 'node -r toolbag metrics.js --seneca.options.debug.short_logs=true --seneca.log=type:act',
+      build: 'npm install'
     },
 
     iot_broker: {
-      run: 'node -r toolbag broker.js --seneca.options.debug.short_logs=true --seneca.log=type:act'
+      run: 'node -r toolbag broker.js --seneca.options.debug.short_logs=true --seneca.log=type:act',
+      build: 'npm install'
     },
 
     vidi_web: {
