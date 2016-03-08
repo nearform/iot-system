@@ -40,7 +40,7 @@ module.exports = {
     },
 
     baseswim: {
-      run: 'node baseswim.js --http 3000'
+      run: 'node baseswim.js --http 3001'
     }
   }
 }

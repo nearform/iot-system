@@ -14,6 +14,10 @@ const seneca = Seneca()
   })
 
 const server = new Mosca.Server({
+  interfaces: [
+    { type: "mqtt", port: 1883 },
+    { type: "http", port: 3042 }
+  ],
   logger: {
     level: 'info'
   }
