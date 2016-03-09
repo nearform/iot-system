@@ -18,6 +18,9 @@ const server = new Mosca.Server({
     { type: "mqtt", port: 1883 },
     { type: "http", port: 3042 }
   ],
+  persistence: {
+    factory: Mosca.persistence.Memory
+  },
   logger: {
     level: 'info'
   }
@@ -30,11 +33,12 @@ MoscaAuth.setup(seneca, server)
 
 server.on('published', function (packet) {
 
-  if(!packet.topic.includes('sensor/lux'))
+  if(!packet.topic.includes('lux'))
     return
 
   var topic = packet.topic.split('/')
   var sensor_id = topic[2]
+  var name = topic[0]
 
   var metric = {
     source: 'mqtt',
@@ -49,7 +53,7 @@ server.on('published', function (packet) {
         sensor_type: 'Light',
         sensor_id: sensor_id,
         broker_id: server.id,
-        topic: `sensor/lux`
+        topic: name + '/lux'
       }
     }
   }

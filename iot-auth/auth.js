@@ -17,7 +17,7 @@ seneca.act({
   nick: 'fakedevice',
   email: 'matteo.collina@nearform.com',
   password: 'fakepassword',
-  publishPatterns: ['sensor/lux/0']
+  publishPatterns: ['sensor/lux/1']
 }, (err) => {
   if (err) {
     throw err
