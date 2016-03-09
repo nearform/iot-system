@@ -2,6 +2,7 @@
 
 var Influx = require('vidi-influx-sink')
 var Metrics = require('vidi-metrics')
+var SenecaMetrics = require('vidi-seneca-metrics')
 var Mqtt = require('../vidi-mqtt-metrics')
 var Toolbag = require('vidi-toolbag-metrics')
 
@@ -24,6 +25,7 @@ var opts = {
 
 require('seneca')()
   .use(Metrics, opts.metrics)
+  .use(SenecaMetrics)
   .use(Toolbag, opts.toolbag)
   .use(Mqtt, opts.mqtt)
   .use(Influx, opts.influx)

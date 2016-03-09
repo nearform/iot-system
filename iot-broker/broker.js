@@ -1,6 +1,8 @@
 'use strict'
 
 const Seneca = require('seneca')
+const VidiMetrics = require('vidi-metrics')
+const SenecaMetrics = require('vidi-seneca-metrics')
 const Mosca = require('mosca')
 const MoscaAuth = require('seneca-mosca-auth')
 const dgram = require('dgram')
@@ -13,6 +15,9 @@ const server = new Mosca.Server({
     level: 'info'
   }
 })
+
+seneca.use(VidiMetrics, {emitter: {enabled: true}})
+seneca.use(SenecaMetrics, {tag: server.id, group: 'broker', pins: ['role:mosca-auth, cmd:register']})
 
 // set up seneca-mosca-auth
 seneca.use(MoscaAuth)
