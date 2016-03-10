@@ -29,7 +29,9 @@ module.exports = {
     },
 
     iot_auth: {
-      run: 'node -r toolbag auth.js --seneca.options.debug.short_logs=true --seneca.log=type:act'
+      run: 'node -r toolbag auth.js --seneca.options.debug.short_logs=true --seneca.log=type:act',
+      build: 'npm install'
+
     },
 
     iot_broker: {
