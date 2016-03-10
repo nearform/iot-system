@@ -6,6 +6,10 @@ iot_metrics:
   build: ../iot-metrics/
   container_name: iot_metrics
 
+iot_auth:
+  build: ../iot-auth/
+  container_name: iot_auth
+
 iot_broker:
   build: ../iot-broker/
   container_name: iot_broker

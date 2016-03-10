@@ -8,6 +8,10 @@ influx:
     - 8086:8086
     - 8083:8083
 
+baseswim:
+  build: ../node_modules/baseswim/
+  container_name: baseswim
+
 fake_device:
   build: ../fake-device/
   container_name: fake_device
@@ -15,6 +19,10 @@ fake_device:
 iot_metrics:
   build: ../iot-metrics/
   container_name: iot_metrics
+
+iot_auth:
+  build: ../iot-auth/
+  container_name: iot_auth
 
 iot_broker:
   build: ../iot-broker/

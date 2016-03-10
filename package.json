@@ -10,6 +10,8 @@
     "start": "node srv/demo.js"
   },
   "dependencies": {
+    "baseswim": "^0.1.2",
+    "copyfiles": "^0.2.1",
     "lodash": "4.6.0",
     "vidi-dashboard": "vidi-insights/vidi-dashboard"
   }
